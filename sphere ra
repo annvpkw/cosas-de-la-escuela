@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caos: esfera de cristal</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+        /* Asegura que el canvas de la RA cubra toda la pantalla */
+        body { margin: 0; overflow: hidden; }
+    </style>
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        
+        <a-marker preset='hiro'>
+            
+            <a-sphere 
+                position="0 0.5 0"       radius="0.5"             material="opacity: 0.5; metalness: 0.8; roughness: 0.1; transparent: true; color: #74f7f7;"
+                
+                animation="property: rotation; from: 0 0 0; to: 0 360 0; dur: 6000; easing: linear; repeat: indefinite;">
+            </a-sphere>
+
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    
+    </a-scene>
+</body>
+</html>
